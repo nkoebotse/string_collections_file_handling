@@ -1,0 +1,24 @@
+void main() {
+  // String manipulation on user input
+  print('Enter a string:');
+  String userInput = stdin.readLineSync() ?? '';
+  
+  stringManipulation();
+  
+  // Store results in a collection
+  List<String> results = [];
+  results.add(userInput);
+  
+  // Save data to a file
+  try {
+    File('log.txt').writeAsString('Input: $userInput at ${DateTime.now()}\n');
+    print('Data logged in log.txt');
+  } catch (e) {
+    print('Error logging data: $e');
+  }
+  
+  // Call other functions
+  collectionsDemo();
+  fileHandling();
+  dateTimeDemo();
+}
